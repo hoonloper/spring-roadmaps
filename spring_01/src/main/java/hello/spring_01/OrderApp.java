@@ -3,15 +3,15 @@ package hello.spring_01;
 import hello.spring_01.member.Grade;
 import hello.spring_01.member.Member;
 import hello.spring_01.member.MemberService;
-import hello.spring_01.member.MemberServiceImpl;
 import hello.spring_01.order.Order;
 import hello.spring_01.order.OrderService;
-import hello.spring_01.order.OrderServiceImpl;
 
 public class OrderApp {
   public static void main(String[] args) {
-    MemberService memberService = new MemberServiceImpl();
-    OrderService orderService = new OrderServiceImpl();
+    AppConfig appConfig = new AppConfig();
+
+    MemberService memberService = appConfig.memberService();
+    OrderService orderService = appConfig.orderService();
 
     Long memberId = 1L;
     Member member = new Member(memberId, "memberA", Grade.VIP);
