@@ -1,5 +1,6 @@
 package hello.spring_01.order;
 
+import hello.spring_01.annotation.MainDiscountPolicy;
 import hello.spring_01.discount.DiscountPolicy;
 import hello.spring_01.member.Member;
 import hello.spring_01.member.MemberRepository;
@@ -39,7 +40,7 @@ public class OrderServiceImpl implements OrderService {
    * 따라서 여기서도 @Quailifier가 우선권이 높다
    */
   @Autowired
-  public OrderServiceImpl(MemberRepository memberRepository, @Qualifier("mainDiscountPolicy") DiscountPolicy discountPolicy) {
+  public OrderServiceImpl(MemberRepository memberRepository, @MainDiscountPolicy DiscountPolicy discountPolicy) {
     this.memberRepository = memberRepository;
     this.discountPolicy = discountPolicy;
   }
