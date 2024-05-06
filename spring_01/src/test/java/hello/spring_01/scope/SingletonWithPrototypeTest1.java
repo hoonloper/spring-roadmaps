@@ -2,13 +2,17 @@ package hello.spring_01.scope;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
+import lombok.Getter;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Scope;
 
+import javax.inject.Provider;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class SingletonWithPrototypeTest1 {
+class SingletonWithPrototypeTest1 {
   @Test
   void prototypeFind() {
     AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(PrototypeBean.class);
@@ -37,29 +41,30 @@ public class SingletonWithPrototypeTest1 {
 
   @Scope("singleton")
   static class ClientBean {
-    private final PrototypeBean prototypeBean; // 생성 시점에 주입
+    @Autowired
+//    private ObjectProvider<PrototypeProviderTest.PrototypeBean> prototypeBeanObjectProvider;
+    private Provider<PrototypeBean> provider;
+//    private final PrototypeBean prototypeBean; // 생성 시점에 주입
 
-    public ClientBean(PrototypeBean prototypeBean) {
-      this.prototypeBean = prototypeBean;
-    }
+//    public ClientBean(PrototypeBean prototypeBean) {
+//      this.prototypeBean = prototypeBean;
+//    }
 
     public int logic() {
+      PrototypeBean prototypeBean = provider.get();
       prototypeBean.addCount();
 
       return prototypeBean.getCount();
     }
   }
 
+  @Getter
   @Scope("prototype")
   static class PrototypeBean {
     private int count = 0;
 
     public void addCount() {
       count++;
-    }
-
-    public int getCount() {
-      return count;
     }
 
     @PostConstruct
