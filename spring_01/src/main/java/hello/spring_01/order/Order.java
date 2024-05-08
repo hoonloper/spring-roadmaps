@@ -3,7 +3,7 @@ package hello.spring_01.order;
 import lombok.Data;
 
 @Data
-public class Order {
+class Order {
   private Long memberId;
   private String itemName;
   private int itemPrice;
@@ -19,7 +19,7 @@ public class Order {
   public int calculatePrice() {
     return itemPrice - discountPrice;
   }
-  
+
   @Override
   public String toString() {
     return "Order{" +

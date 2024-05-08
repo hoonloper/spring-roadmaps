@@ -8,7 +8,7 @@ import hello.spring_01.order.OrderService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-public class OrderApp {
+class OrderApp {
   public static void main(String[] args) {
 //    AppConfig appConfig = new AppConfig();
 //    MemberService memberService = appConfig.memberService();

@@ -3,7 +3,7 @@ package hello.spring_01.member;
 import lombok.Data;
 
 @Data
-public class Member {
+class Member {
   private Long id;
   private String name;
   private Grade grade;
