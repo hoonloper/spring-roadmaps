@@ -7,8 +7,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-public class BeanLifeCycleTest {
-  @Test
+ @Test
   public void lifeCycleTest() {
     ConfigurableApplicationContext ac = new AnnotationConfigApplicationContext(LifeCycleConfig.class);
 

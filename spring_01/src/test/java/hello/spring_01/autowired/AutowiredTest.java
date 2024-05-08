@@ -9,7 +9,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import java.util.Optional;
 
-public class AutowiredTest {
+class AutowiredTest {
   @Test
   void AutowiredOption() {
     ApplicationContext ac = new AnnotationConfigApplicationContext(TestBean.class);

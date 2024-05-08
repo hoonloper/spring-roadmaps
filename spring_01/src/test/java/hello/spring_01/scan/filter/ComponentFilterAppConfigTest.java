@@ -9,7 +9,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.FilterType;
 
-public class ComponentFilterAppConfigTest {
+class ComponentFilterAppConfigTest {
   @Test
   void filterScan() {
     ApplicationContext ac = new AnnotationConfigApplicationContext(ComponentFilterAppConfigTest.class);

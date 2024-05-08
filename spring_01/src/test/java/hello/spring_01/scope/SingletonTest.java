@@ -8,7 +8,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Scope;
 
-public class SingletonTest {
+class SingletonTest {
   @Test
   void singletonBeanFind() {
     AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(SingletonBean.class);

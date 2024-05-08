@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-public class ConfigurationSingletonTest {
+class ConfigurationSingletonTest {
   @Test
   void configurationTest() {
     ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);

@@ -13,7 +13,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import java.util.List;
 import java.util.Map;
 
-public class AllBeanTest {
+class AllBeanTest {
   @Test
   void findAllBean() {
     ApplicationContext ac = new AnnotationConfigApplicationContext(AutoAppConfig.class, DiscountService.class);
