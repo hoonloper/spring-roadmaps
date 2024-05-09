@@ -1,8 +1,10 @@
 package hello.spring_01.member;
 
 import lombok.Data;
+import lombok.ToString;
 
 @Data
+@ToString
 class Member {
   private Long id;
   private String name;

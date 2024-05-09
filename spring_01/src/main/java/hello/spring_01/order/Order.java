@@ -1,8 +1,10 @@
 package hello.spring_01.order;
 
 import lombok.Data;
+import lombok.ToString;
 
 @Data
+@ToString
 class Order {
   private Long memberId;
   private String itemName;
@@ -18,15 +20,5 @@ class Order {
 
   public int calculatePrice() {
     return itemPrice - discountPrice;
-  }
-
-  @Override
-  public String toString() {
-    return "Order{" +
-      "memberId=" + memberId +
-      ", itemName='" + itemName + '\'' +
-      ", itemPrice=" + itemPrice +
-      ", discountPrice=" + discountPrice +
-      '}';
   }
 }
