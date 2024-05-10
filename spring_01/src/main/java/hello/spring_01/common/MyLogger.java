@@ -10,7 +10,7 @@ import java.util.UUID;
 
 @Component
 @Scope(value = "request", proxyMode = ScopedProxyMode.TARGET_CLASS)
-class MyLogger {
+public class MyLogger {
   private String uuid;
   private String requestURL;
 

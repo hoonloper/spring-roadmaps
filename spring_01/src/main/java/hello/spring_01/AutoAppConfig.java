@@ -12,5 +12,5 @@ import org.springframework.context.annotation.FilterType;
 //  basePackageClasses = AutoAppConfig.class,
 //  excludeFilters = @ComponentScan.Filter(type = FilterType.ANNOTATION, classes = Configuration.class)
 //)
-//class AutoAppConfig {
+//public class AutoAppConfig {
 //}

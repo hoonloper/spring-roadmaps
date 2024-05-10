@@ -5,7 +5,7 @@ import lombok.ToString;
 
 @Data
 @ToString
-class Member {
+public class Member {
   private Long id;
   private String name;
   private Grade grade;

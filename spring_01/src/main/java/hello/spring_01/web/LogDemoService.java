@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-class LogDemoService {
+public class LogDemoService {
   private final MyLogger myLogger;
 
   public void logic(String id) {

@@ -6,7 +6,7 @@ import hello.spring_01.member.MemberService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-class MemberApp {
+public class MemberApp {
   public static void main(String[] args) {
 //    AppConfig appConfig = new AppConfig();
 //    MemberService memberService = appConfig.memberService();

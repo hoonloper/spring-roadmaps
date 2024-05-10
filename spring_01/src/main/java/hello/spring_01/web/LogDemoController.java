@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequiredArgsConstructor
-class LogDemoController {
+public class LogDemoController {
   private final LogDemoService logDemoService;
   private final MyLogger myLogger;
 

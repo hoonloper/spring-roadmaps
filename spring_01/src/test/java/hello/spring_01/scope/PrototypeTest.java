@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Scope;
 
-class PrototypeTest {
+public class PrototypeTest {
   @Test
   void prototypeBeanFind() {
     AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(PrototypeBean.class);

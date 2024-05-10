@@ -5,7 +5,7 @@ import lombok.ToString;
 
 @Data
 @ToString
-class Order {
+public class Order {
   private Long memberId;
   private String itemName;
   private int itemPrice;
