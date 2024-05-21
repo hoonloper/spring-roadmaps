@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: spring_02
+  mvc:
+    view:
+      prefix: /WEB_INF/views/
+      suffix: .jsp
+
+logging:
+  level:
+    org:
+      apache:
+        coyote:
+          http11: debug
