@@ -26,7 +26,8 @@ public class FormItemController {
 
     @ModelAttribute("regions")
     public Map<String, String> regions() {
-        Map<String, String> regions = new LinkedHashMap<>(); regions.put("SEOUL", "서울");
+        Map<String, String> regions = new LinkedHashMap<>();
+        regions.put("SEOUL", "서울");
         regions.put("BUSAN", "부산");
         regions.put("JEJU", "제주");
         return regions;
@@ -40,11 +41,9 @@ public class FormItemController {
     @ModelAttribute("deliveryCodes")
     public List<DeliveryCode> deliveryCodes() {
         List<DeliveryCode> deliveryCodes = new ArrayList<>();
-
         deliveryCodes.add(new DeliveryCode("FAST", "빠른 배송"));
         deliveryCodes.add(new DeliveryCode("NORMAL", "일반 배송"));
         deliveryCodes.add(new DeliveryCode("SLOW", "느린 배송"));
-
         return deliveryCodes;
     }
 
@@ -70,9 +69,10 @@ public class FormItemController {
 
     @PostMapping("/add")
     public String addItem(@ModelAttribute Item item, RedirectAttributes redirectAttributes) {
-        log.info("item.open = {}", item.getOpen());
-        log.info("item.regions = {}", item.getRegions());
-        log.info("item.type = {}", item.getItemType());
+
+        log.info("item.open={}", item.getOpen());
+        log.info("item.regions={}", item.getRegions());
+        log.info("item.itemType={}", item.getItemType());
 
         Item savedItem = itemRepository.save(item);
         redirectAttributes.addAttribute("itemId", savedItem.getId());
@@ -84,6 +84,7 @@ public class FormItemController {
     public String editForm(@PathVariable Long itemId, Model model) {
         Item item = itemRepository.findById(itemId);
         model.addAttribute("item", item);
+
         return "form/editForm";
     }
 
