@@ -46,6 +46,14 @@ public class ValidationItemControllerV3 {
     // @Valid -> Java 표준 (호환성 높음)
     // Validation은 Binding이 완료된 후에 실행되어 typeMismatch 에러가 발생한다면 Validation은 실행되지 않는다.
     public String addItem(@Validated @ModelAttribute Item item, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
+        // 특정 필드가 아닌 복합 룰 검증
+        if (item.getPrice() != null && item.getQuantity() != null) {
+            int resultPrice = item.getPrice() * item.getQuantity();
+            if (resultPrice < 10_000) {
+                bindingResult.reject("totalPriceMin", new Object[]{10_000, resultPrice}, "가격 * 수량의 합은 10,000원 이상이어야 함");
+            }
+        }
+
         if (bindingResult.hasErrors()) {
             log.info("errors={}", bindingResult);
 
