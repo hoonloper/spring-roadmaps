@@ -2,16 +2,23 @@ package study.spring_10_exception;
 
 import jakarta.servlet.DispatcherType;
 import jakarta.servlet.Filter;
+import java.util.List;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.HandlerExceptionResolver;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import study.spring_10_exception.exception.filter.LogFilter;
 import study.spring_10_exception.exception.interceptor.LogInterceptor;
+import study.spring_10_exception.exception.resolver.MyHandlerExceptionResolver;
 
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
+  @Override
+  public void extendHandlerExceptionResolvers(List<HandlerExceptionResolver> resolvers) {
+    resolvers.add(new MyHandlerExceptionResolver());
+  }
 
   @Override
   public void addInterceptors(InterceptorRegistry registry) {
