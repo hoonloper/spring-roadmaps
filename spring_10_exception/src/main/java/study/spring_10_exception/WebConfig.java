@@ -12,12 +12,15 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import study.spring_10_exception.exception.filter.LogFilter;
 import study.spring_10_exception.exception.interceptor.LogInterceptor;
 import study.spring_10_exception.exception.resolver.MyHandlerExceptionResolver;
+import study.spring_10_exception.exception.resolver.UserHandlerExceptionResolver;
 
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
+
   @Override
   public void extendHandlerExceptionResolvers(List<HandlerExceptionResolver> resolvers) {
     resolvers.add(new MyHandlerExceptionResolver());
+    resolvers.add(new UserHandlerExceptionResolver());
   }
 
   @Override
@@ -28,7 +31,7 @@ public class WebConfig implements WebMvcConfigurer {
         .excludePathPatterns("/css/**", "/*.ico", "/error", "/error-page/**");
   }
 
-//  @Bean
+  //  @Bean
   public FilterRegistrationBean logFilter() {
     FilterRegistrationBean<Filter> filterRegistrationBean = new FilterRegistrationBean<>();
     filterRegistrationBean.setFilter(new LogFilter());
