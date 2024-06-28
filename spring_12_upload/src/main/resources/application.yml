@@ -14,4 +14,4 @@ logging:
           http11: debug
 
 file:
-  dir: '/Users/Desktop/'
+  dir: '/'
